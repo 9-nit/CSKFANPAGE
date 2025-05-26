@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Squad - Chennai Super Kings</title>
+    <meta name="description" content="Meet the complete Chennai Super Kings squad for IPL 2023. View player profiles, statistics, and team composition.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Team Squad - Chennai Super Kings">
+    <meta property="og:description" content="Meet the complete Chennai Super Kings squad for IPL 2023. View player profiles, statistics, and team composition.">
+    <meta property="og:image" content="img/csk-logo.png">
+    <meta property="og:url" content="https://chennaisuperkings.com/squad">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <div class="logo-circle">
+                            <span>CSK</span>
+                        </div>
+                        <div class="logo-text">
+                            <h1>CHENNAI SUPER KINGS</h1>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#schedule">Matches</a>
+                    <a href="squad.html" class="active">Team</a>
+                    <a href="index.html#stats">Stats</a>
+                    <a href="index.html#fans">Fan Zone</a>
+                </nav>
+
+                <!-- Social Media Icons (Desktop) -->
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav">
+            <div class="mobile-nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#schedule">Matches</a>
+                <a href="squad.html" class="active">Team</a>
+                <a href="index.html#stats">Stats</a>
+                <a href="index.html#fans">Fan Zone</a>
+            </div>
+            <div class="mobile-social-icons">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="page-header" style="background-color: var(--light-color); padding: 3rem 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h1>TEAM SQUAD</h1>
+                    <div class="section-line"></div>
+                    <p>Meet the players who represent Chennai Super Kings in the IPL 2023 season.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <!-- Team Categories Tabs -->
+                <div class="team-categories">
+                    <button class="category-btn active" data-filter="all">All-Players</button>
+                    <!-- <button class="category-btn" data-filter="Wicketkeeper">Wicketkeeper</button> -->
+                    <button class="category-btn" data-filter="batsman">Batsmen</button>
+                    <button class="category-btn" data-filter="bowler">Bowlers</button>
+                    <button class="category-btn" data-filter="all-rounder">All-Rounders</button>
+                </div>
+
+                <div class="players-grid" id="players-container">
+                    <!-- Players will be loaded here dynamically -->
+                </div>
+
+                <!-- No Players Found Message -->
+                <div id="no-players-message" style="display: none;">
+                    <div style="text-align: center; padding: 3rem 0;">
+                        <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">
+                            <i class="fas fa-users-slash"></i>
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--secondary-color); margin-bottom: 0.5rem;">No players found</h3>
+                        <p style="color: rgba(0, 0, 0, 0.7);">There are no players in this category at the moment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo and About -->
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="logo-circle">
+                            <span>CSK</span>
+                        </div>
+                        <div class="logo-text">
+                            <h2>CHENNAI SUPER KINGS</h2>
+                        </div>
+                    </div>
+                    <p class="about-text">
+                        Chennai Super Kings is an Indian Premier League franchise cricket team based in Chennai, Tamil Nadu. 
+                        Founded in 2008, the team has won the IPL title five times and has the highest win percentage 
+                        among all teams in the IPL.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h3>QUICK LINKS</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="schedule.html">Match Schedule</a></li>
+                        <li><a href="squad.html">Team</a></li>
+                        <li><a href="index.html#stats">Statistics</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="index.html#fans">Fan Zone</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support -->
+                <div class="footer-support">
+                    <h3>SUPPORT</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Ticket Information</a></li>
+                        <li><a href="#">Store</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div class="footer-contact">
+                    <h3>CONTACT</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>M.A. Chidambaram Stadium, Chepauk, Chennai, Tamil Nadu, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+91 XXXXXXXXX</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@chennaisuperkings.in</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Chennai Super Kings Cricket Ltd. All rights reserved.</p>
+                <p>This is a fan website created for educational purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <h2>WICKET KEEPERS</h2>
+    <script>
+        // Squad page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            let allPlayers = [
+                { 
+                    id: 1,
+                    name: "MS Dhoni",
+                    role: "Wicketkeeper-Batsman",
+                    stats: {
+                        matches: 256,
+                        runs: 5141,
+                        strikeRate: 136.58,
+                        wickets: 0,
+                    },
+                    image_url: "https://gallery.chennaisuperkings.com/PROD/TEAM/Team1playerImgNoBg_1742631281534.png"
+                },
+                {
+                     id: 2,
+                    name: "VANSH BEDI",
+                    role: "Wicketkeeper",
+                    stats: {
+                        matches: 50,
+                        runs: 13,
+                        wickets: 53,
+                        economy: 7.91,
+                    },
+                    image_url: "https://gallery.chennaisuperkings.com/PROD/TEAM/Team42playerImgNoBg_1742633689180.png"
+                },
+                {
+                    id: 3,
+                    name: "Urvil Patel",
+                    role: "Wicketkeeper",
+                    stats: {
+                        matches: 0,
+                        runs: 0,
+                        strikeRate: 0,
+                    },
+                    image_url: "https://gallery.chennaisuperkings.com/PROD/TEAM/Team49playerImgNoBg_1747902412853.png" 
+                },
+                {
+                  id: 4,
+                    name: "Ravindra Jadeja",
+                    role: "All-Rounder",
+                    stats: {
+                        matches: 200,
+                        runs: 2500,
+                        wickets: 120,
+                        economy: 7.5,
+                    },
+                    image_url: "https://gallery.chennaisuperkings.com/PROD/TEAM/Team2playerImgNoBg_1742633275156.png"
+                },
+                {
+                    id: 5,
+                    name: "RUTURAJ GAIKWAD",
+                    role: "Batsman",
+                    stats: {
+                        matches: 54,
+                        runs: 1858,
+                        strikeRate: 135.2,
+                    },
+                    image_url: "https://gallery.chennaisuperkings.com/PROD/TEAM/Team4playerImgNoBg_1742633286428.png"
+                },
+                {
+                    id: 6,
+                    name: "RAHUL TRIPATHI",
+                    role: "Batsman",
+                    stats: {
+                        matches: 15,
+                       runs: 32,
+                        strikeRate: 135.2,
+                    },
+                    image_url: "https://gallery.chennaisuperkings.com/PROD/TEAM/Team7playerImgNoBg_1742633365730.png"
+                },
+                {
+                    id: 7,
+                    name: "DEVON CONWAY",
+                    role: "Batsman",
+                    stats: {
+                        matches: 50,
+                        runs: 3432,
+                        strikeRate: 35.2,
+                    },
+                    image_url: "https://gallery.chennaisuperkings.com/PROD/TEAM/Team8playerImgNoBg_1742633470985.png"
+                },
+                {
+                    id: 8,
+                    name: "SHAIK RASHEED",
+                    role: "Batsman",
+                    stats: {
+                        matches: 34,
+                        runs: 432,
+                        strikeRate: 155.2,
+                    },
+                    image_url: "https://gallery.chennaisuperkings.com/PROD/TEAM/Team22playerImgNoBg_1742633543542.png"
+                },
+                {
+                    id: 9,
+                    name: "Ayush Mhatre",
+                    role: "Batsman",
+                    stats: {
+                        matches: 54,
+                        runs: 2632,
+                        strikeRate: 125.2,
+                    },
+                    image_url: "https://gallery.chennaisuperkings.com/PROD/TEAM/Team45playerImgNoBg_1744959685807.png"
+                },
+                {
+                    id: 10,
+                    name: "Dewald Brevis",
+                    role: "Batsman",
+                    stats: {
+                        matches: 20,
+                        runs: 5432,
+                        strikeRate: 165.2,
+                    },
+                    image_url: "https://gallery.chennaisuperkings.com/PROD/TEAM/Team46playerImgNoBg_1745386143422.png"
+                },
+                {
+                    id: 11,
+                    name: "ANDRE SIDDARTH",
+                    role: "Batsman",
+                    stats: {
+                        matches: 40,
+                        runs: 4643,
+                        strikeRate: 156.2,
+                    },
+                    image_url: "https://gallery.chennaisuperkings.com/PROD/TEAM/Team44playerImgNoBg_1742633732800.png"
+                },
+                {
+                    id: 12,
+                    name: "NOOR AHMAD",
+                    role: "Bowler",
+                    stats: {
+                        matches: 45,
+                        wickets: 60,
+                        economy: 7.5,
+                    },
+                    image_url: "https://gallery.chennaisuperkings.com/PROD/TEAM/Team12playerImgNoBg_1742633410911.png"
+                },
+                {
+                    id: 13,
+                    name: "KHALEEL AHMED",
+                    role: "Bowler",
+                    stats: {
+                        matches: 50,
+                        wickets: 6,
+                        economy: 4.5,
+                    },
+                    image_url: "https://gallery.chennaisuperkings.com/PROD/TEAM/Team13playerImgNoBg_1742633434882.png"
+                },
+            ];
+            
+            // Display players in the grid
+            displayPlayers(allPlayers);
+            
+            // Display players in the grid
+            function displayPlayers(players) {
+                const container = document.getElementById('players-container');
+                container.innerHTML = '';
+                
+                if (!players || players.length === 0) {
+                    document.getElementById('no-players-message').style.display = 'block';
+                    return;
+                } else {
+                    document.getElementById('no-players-message').style.display = 'none';
+                }
+                
+                players.forEach(player => {
+                    const playerCard = document.createElement('div');
+                    playerCard.className = 'player-card';
+                    
+                    let statsHTML = '';
+                    if (player.role.includes('Batsman') || player.role.includes('All-Rounder')) {
+                        statsHTML = `
+                            <div class="stat">
+                                <p class="stat-label">Matches</p>
+                                <p class="stat-value">${player.stats.matches}</p>
+                            </div>
+                            <div class="stat">
+                                <p class="stat-label">Runs</p>
+                                <p class="stat-value">${player.stats.runs || 0}</p>
+                            </div>
+                            <div class="stat">
+                                <p class="stat-label">${player.role.includes('All-Rounder') ? 'Wickets' : 'SR'}</p>
+                                <p class="stat-value">${player.role.includes('All-Rounder') ? (player.stats.wickets || 0) : (player.stats.strikeRate || 0)}</p>
+                            </div>
+                        `;
+                    } else {
+                        statsHTML = `
+                            <div class="stat">
+                                <p class="stat-label">Matches</p>
+                                <p class="stat-value">${player.stats.matches}</p>
+                            </div>
+                            <div class="stat">
+                                <p class="stat-label">Wickets</p>
+                                <p class="stat-value">${player.stats.wickets || 0}</p>
+                            </div>
+                            <div class="stat">
+                                <p class="stat-label">Econ</p>
+                                <p class="stat-value">${player.stats.economy || 0}</p>
+                            </div>
+                        `;
+                    }
+                    
+                    playerCard.innerHTML = `
+                        <div class="player-image">
+                            <img src="${player.image_url}" alt="${player.name} - Chennai Super Kings">
+                            <div class="player-info">
+                                <h3>${player.name}</h3>
+                                <p>${player.role}</p>
+                            </div>
+                        </div>
+                        <div class="player-stats">
+                            ${statsHTML}
+                            <a href="player-profile.html?id=${player.id}" class="btn btn-outline btn-full">View Profile</a>
+                        </div>
+                    `;
+                    
+                    container.appendChild(playerCard);
+                });
+            }
+            
+            // Filter players by category
+            function filterPlayers(category) {
+                let filteredPlayers = allPlayers;
+                
+                if (category === 'Wicketkeeper') {
+                    filteredPlayers = allPlayers.filter(player => player.role.toLowerCase().includes('Wicketkeeper'));
+                } else if (category === 'bowler') {
+                    filteredPlayers = allPlayers.filter(player => player.role.toLowerCase().includes('bowler') && !player.role.toLowerCase().includes('all-rounder'));
+                } else if (category === 'all-rounder') {
+                    filteredPlayers = allPlayers.filter(player => player.role.toLowerCase().includes('all-rounder'));
+                } else if (category === 'batsman') {
+                    filteredPlayers = allPlayers.filter(player => player.role.toLowerCase().includes('batsman'));
+                }
+                
+                displayPlayers(filteredPlayers);
+            }
+            
+            // Handle category button clicks
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    filterPlayers(filter);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
